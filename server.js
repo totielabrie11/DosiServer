@@ -50,6 +50,8 @@ app.use(header_fondo_controller);
 
 app.use(buscadorSeccionPages);
 
+app.get('/api/download-db', downloadDbController.downloadDB);
+
 // Endpoint para el manejo de videos
 app.post('/api/videos/upload', videoController.upload);
 app.get('/api/videos', videoController.getAll);
@@ -68,7 +70,6 @@ app.put('/api/images/:filename', fotosController.uploadImages.single('image'), f
 app.post('/api/fotoText/save', fotoTextController.save); // Ruta POST para guardar
 app.get('/api/fotoText', fotoTextController.getAll);  
 
-app.get('/api/download-db', downloadDbController.downloadDB);
 
 // Definir el directorio 'data'
 const dataDir = path.join(__dirname, 'data'); 
