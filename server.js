@@ -779,19 +779,9 @@ app.put('/api/distribuidores/:id', (req, res) => {
 // Endpoint para manejar contactos y envío de correos
 app.post('/api/contact', upload.single('file'), enviarCorreo);
 
-
-
-
-// Para cualquier ruta, servir el archivo 'index.html'
-app.use(express.static(path.join(__dirname, '../build')));
-
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../build', 'index.html'));
-});
-
 // Iniciar el servidor
 const server = app.listen(port, () => {
   console.log(`Servidor corriendo en el puerto ${port}`);
-});
+});const PORT = process.env.PORT || 10000; // Utiliza el puerto que Render proporciona o un puerto predeterminado
 
 server.setTimeout(10 * 60 * 1000); // 10 minutos de timeout
