@@ -69,7 +69,6 @@ app.get('/api/fotoText', fotoTextController.getAll);
 
 // Definir el directorio 'data'
 const dataDir = path.join(__dirname, 'data');  // Ajustado
-console.log("🚀 ~ dataDir:", dataDir)
 if (!fs.existsSync(dataDir)) {
   fs.mkdirSync(dataDir, { recursive: true });  // Crear el directorio si no existe
 }
