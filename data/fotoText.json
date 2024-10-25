@@ -1,0 +1,68 @@
+[
+  {
+    "name": "campo.png",
+    "description": "Venite Que La Vas a Pasar Genial con todo tu equipo",
+    "fontFamily": "Times New Roman, serif",
+    "fontColor": "#ffffff",
+    "textTransform": "uppercase",
+    "backgroundColor": "rgba(0, 0, 0, 0.7)",
+    "pageName": "Aguas"
+  },
+  {
+    "name": "fondo.png",
+    "description": "hace mucho frio hermano pero mal un equipo solar en cualquier condicion",
+    "fontFamily": "Helvetica, sans-serif",
+    "fontColor": "#77a324",
+    "textTransform": "uppercase",
+    "backgroundColor": "rgba(0, 0, 0, 0.7)",
+    "pageName": "Petroleo"
+  },
+  {
+    "name": "nieve.png",
+    "description": "hace mucho frio hermano pero mal un equipo solar en cualquier condicion",
+    "fontFamily": "Comic Sans MS, cursive",
+    "fontColor": "#ffffff",
+    "textTransform": "uppercase",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "pageName": "Refrigeracion"
+  },
+  {
+    "name": "noche.png",
+    "description": "hace mucho frio hermano",
+    "fontFamily": "Georgia, serif"
+  },
+  {
+    "name": "selvafuerte.webp",
+    "description": "Foto Que Representa lo Verde Ecologico",
+    "fontFamily": "Helvetica, sans-serif",
+    "fontColor": "#000000",
+    "textTransform": "uppercase",
+    "backgroundColor": "rgba(251, 253, 88, 0.8)"
+  },
+  {
+    "name": "puestanoche.png.png",
+    "description": "Tenebroso y maldito y morboso",
+    "fontFamily": "Courier New, monospace",
+    "fontColor": "#ffffff",
+    "textTransform": "none",
+    "backgroundColor": "rgba(0, 0, 0, 0.7)"
+  },
+  {
+    "name": "fondoagua.jpg",
+    "description": "toma agua pura y rica con sabor a Dosivac ",
+    "fontFamily": "Arial, sans-serif",
+    "fontColor": "#ffffff",
+    "textTransform": "none",
+    "backgroundColor": "rgba(0, 0, 0, 0.7)",
+    "paginaAsignar": "Aguas"
+  },
+  {
+    "name": "aplicandovacio.webp",
+    "description": "Te va a quedar hermoso el equipo con nuestra bomba Dosivac",
+    "fontFamily": "Arial, sans-serif",
+    "fontColor": "#007bff",
+    "textTransform": "uppercase",
+    "backgroundColor": "rgba(30, 204, 65, 0.8)",
+    "paginaAsignar": "Refrigeracion"
+  }
+]
