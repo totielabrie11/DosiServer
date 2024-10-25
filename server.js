@@ -3,16 +3,17 @@ const fs = require('fs');
 const path = require('path');
 const multer = require('multer');
 const cors = require('cors');
-const getGLTFFiles = require('./scripts/getModels');  // Ajustado
+const getGLTFFiles = require('./scripts/getModels'); 
 const session = require('express-session');
-const { upload, enviarCorreo } = require('./controllers/emailHandler');  // Ajustado
-const fondoController = require('./controllers/fondosController');  // Ajustado
-const pageController = require('./controllers/pageController');  // Ajustado
-const videoController = require('./controllers/videoController');  // Ajustado
-const fotosController = require('./controllers/fotosController');  // Ajustado
-const fotoTextController = require('./controllers/fotoTextController');  // Ajustado
-const header_fondo_controller = require('./controllers/header_fondo_controller');  // Ajustado
-const buscadorSeccionPages = require('./controllers/buscadorSeccionPages');  // Ajustado
+const { upload, enviarCorreo } = require('./controllers/emailHandler'); 
+const fondoController = require('./controllers/fondosController'); 
+const pageController = require('./controllers/pageController'); 
+const videoController = require('./controllers/videoController'); 
+const fotosController = require('./controllers/fotosController'); 
+const fotoTextController = require('./controllers/fotoTextController'); 
+const header_fondo_controller = require('./controllers/header_fondo_controller'); 
+const buscadorSeccionPages = require('./controllers/buscadorSeccionPages'); 
+const downloadDbController = require('./controllers/downloadDbController');
 
 
 const app = express();
@@ -67,8 +68,10 @@ app.put('/api/images/:filename', fotosController.uploadImages.single('image'), f
 app.post('/api/fotoText/save', fotoTextController.save); // Ruta POST para guardar
 app.get('/api/fotoText', fotoTextController.getAll);  
 
+app.get('/api/download-db', downloadDbController.downloadDB);
+
 // Definir el directorio 'data'
-const dataDir = path.join(__dirname, 'data');  // Ajustado
+const dataDir = path.join(__dirname, 'data'); 
 if (!fs.existsSync(dataDir)) {
   fs.mkdirSync(dataDir, { recursive: true });  // Crear el directorio si no existe
 }
@@ -82,7 +85,7 @@ if (!fs.existsSync(dataPath)) {
 }
 
 // Archivo mails.json
-const mailsPath = path.join(dataDir, 'mails.json');  // Ajustado
+const mailsPath = path.join(dataDir, 'mails.json'); 
 if (!fs.existsSync(mailsPath)) {
   fs.writeFileSync(mailsPath, JSON.stringify([]));
 }
@@ -156,7 +159,7 @@ app.use('/uploads/videos', express.static(path.join(__dirname, '../uploads/video
 // Configuración de Multer para subir productos 3D (Modelos)
 const storageModels = multer.diskStorage({
   destination: (req, file, cb) => {
-    cb(null, path.join(__dirname, '../public', 'models'));  // Ajustado
+    cb(null, path.join(__dirname, '../public', 'models')); 
     // Directorio de destino para modelos
   },
   filename: (req, file, cb) => {
@@ -170,7 +173,7 @@ const uploadModels = multer({ storage: storageModels }); // Multer para producto
 // Configuración de Multer para las novedades
 const storageNovedades = multer.diskStorage({
   destination: (req, file, cb) => {
-    cb(null, path.join(__dirname, '../public', 'assets', 'img', 'portfolio'));  // Ajustado
+    cb(null, path.join(__dirname, '../public', 'assets', 'img', 'portfolio')); 
     // Directorio de novedades
   },
   filename: (req, file, cb) => {
@@ -183,7 +186,7 @@ const uploadNovedades = multer({ storage: storageNovedades });  // Multer para n
 // Configuración de Multer para el equipo
 const storageEquipo = multer.diskStorage({
   destination: (req, file, cb) => {
-    cb(null, path.join(__dirname, '../public', 'assets', 'img', 'team'));  // Ajustado
+    cb(null, path.join(__dirname, '../public', 'assets', 'img', 'team')); 
   // Directorio para imágenes del equipo
   },
   filename: (req, file, cb) => {
