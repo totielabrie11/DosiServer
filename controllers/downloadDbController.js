@@ -3,13 +3,20 @@ const fs = require('fs');
 const archiver = require('archiver');
 
 exports.downloadDB = (req, res) => {
-  // Verificar si el usuario es administrador (basado en sesión o verificación de rol)
-  if (!req.session.isAdmin) {
-    return res.status(403).json({ message: 'Acceso denegado' });
-  }
+  // Comentar o eliminar la verificación de administrador temporalmente
+  // if (!req.session.isAdmin) {
+  //   return res.status(403).json({ message: 'Acceso denegado' });
+  // }
 
   const dataDir = path.join(__dirname, '../data');
-  const outputPath = path.join(__dirname, '../temp', 'db_backup.zip'); // Ajusta según sea necesario
+  const tempDir = path.join(__dirname, '../temp');
+  
+  // Verifica si la carpeta /temp existe, si no, la crea.
+  if (!fs.existsSync(tempDir)) {
+    fs.mkdirSync(tempDir);
+  }
+
+  const outputPath = path.join(tempDir, 'db_backup.zip');
 
   // Crear un stream para escribir el archivo ZIP
   const output = fs.createWriteStream(outputPath);

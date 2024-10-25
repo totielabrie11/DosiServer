@@ -128,31 +128,5 @@
       -34.6606623,
       -58.5618369
     ]
-  },
-  {
-    "id": 11,
-    "nombre": "Totie Labrie Distribuciones",
-    "direccion": "cisneros 490",
-    "provincia": "buenos aires",
-    "telefono": "1158235845",
-    "mail": "martinezcarlosmanuel.1@gmail.com",
-    "tipo": "refrigeracion",
-    "posicion": [
-      -34.65797604081632,
-      -58.55131273469388
-    ]
-  },
-  {
-    "id": 12,
-    "nombre": "Leo Distribución de Marucha",
-    "direccion": "Sarmiento no me acuerdo la altura",
-    "provincia": "Buenos Aires",
-    "telefono": "11111111111111",
-    "mail": "repuestos@dosivac.com",
-    "tipo": "refrigeracion",
-    "posicion": [
-      -34.532511285714286,
-      -58.56371448979591
-    ]
   }
 ]
