@@ -1,0 +1,145 @@
+[
+  {
+    "id": 1,
+    "nombre": "Distribuidor 2222",
+    "provincia": "Buenos Aires",
+    "direccion": "Av. Siempre muerta 123",
+    "telefono": "1234-5678",
+    "mail": "contacto@distribuidor1.com",
+    "posicion": [
+      -34.6037,
+      -58.3816
+    ],
+    "tipo": "nacional"
+  },
+  {
+    "id": 2,
+    "nombre": "Distribuidor 2",
+    "provincia": "Córdoba",
+    "direccion": "Calle Falsa 456",
+    "telefono": "8765-4321",
+    "mail": "contacto@distribuidor2.com",
+    "posicion": [
+      -31.417,
+      -64.183
+    ],
+    "tipo": "nacional"
+  },
+  {
+    "id": 3,
+    "nombre": "Distribuidor 3",
+    "provincia": "Mendoza",
+    "direccion": "Ruta Nacional 40",
+    "telefono": "9876-5432",
+    "mail": "contacto@distribuidor3.com",
+    "posicion": [
+      -32.8908,
+      -68.8272
+    ],
+    "tipo": "refrigeracion"
+  },
+  {
+    "id": 4,
+    "nombre": "Distribuidor 4",
+    "provincia": "Santa Fe",
+    "direccion": "Calle Rosas 789",
+    "telefono": "1357-2468",
+    "mail": "contacto@distribuidor4.com",
+    "posicion": [
+      -31.6333,
+      -60.7
+    ],
+    "tipo": "internacional"
+  },
+  {
+    "id": 5,
+    "nombre": "Distribuidor 5",
+    "provincia": "Salta",
+    "direccion": "Calle Libertador 101",
+    "telefono": "5555-4321",
+    "mail": "contacto@distribuidor5.com",
+    "posicion": [
+      -24.7829,
+      -65.4232
+    ],
+    "tipo": "refrigeracion"
+  },
+  {
+    "id": 6,
+    "nombre": "Distribuidor 6",
+    "provincia": "Brasil",
+    "direccion": "Av. Paulista 1000",
+    "telefono": "7777-8888",
+    "mail": "contacto@distribuidor6.com",
+    "posicion": [
+      -23.5505,
+      -46.6333
+    ],
+    "tipo": "internacional"
+  },
+  {
+    "id": 7,
+    "nombre": "Distribuidor 7",
+    "provincia": "Paraguay",
+    "direccion": "Av. Mcal. López 500",
+    "telefono": "9999-1010",
+    "mail": "contacto@distribuidor7.com",
+    "posicion": [
+      -25.2637,
+      -57.5759
+    ],
+    "tipo": "internacional"
+  },
+  {
+    "id": 8,
+    "nombre": "Charly Refrigeración",
+    "direccion": "Cisneros 490 - Ramos Mejía",
+    "provincia": "Buenos Aires",
+    "telefono": "1158235845",
+    "mail": "martinezcarlosmanuel.1@gmail.com",
+    "tipo": "refrigeracion",
+    "posicion": [
+      -34.655489061224486,
+      -58.54202052448979
+    ]
+  },
+  {
+    "id": 9,
+    "nombre": "Gomez Distribución",
+    "direccion": "Av San Martín 790",
+    "provincia": "Buenos Aires",
+    "telefono": "1151515151",
+    "mail": "rg@dosivac.com",
+    "tipo": "nacional",
+    "posicion": [
+      -34.64864658333333,
+      -58.55617625
+    ]
+  },
+  {
+    "id": 10,
+    "nombre": "Nazareno Distribución",
+    "direccion": "Avda. De Mayo 1902",
+    "provincia": "buenos aires",
+    "telefono": "15151515151",
+    "mail": "colegiosaleciono@donbosco.com",
+    "tipo": "refrigeracion",
+    "posicion": [
+      -34.6606623,
+      -58.5618369
+    ]
+  },
+  {
+    "id": 11,
+    "nombre": "Dosivac Distribuicion",
+    "direccion": "Diag. Rivadavía 5945",
+    "provincia": "buenos aires",
+    "telefono": "1158235845",
+    "mail": "dosivac@dosivac.com",
+    "tipo": "nacional",
+    "posicion": [
+      -34.56070997959184,
+      -58.592398510204085
+    ]
+  }
+]

@@ -1,0 +1,48 @@
+[
+  {
+    "name": "Charly",
+    "email": "martinezcarlosmanuel.1@gmail.com",
+    "phone": "1158235845",
+    "message": "hola",
+    "date": "2024-10-01T13:41:53.416Z"
+  },
+  {
+    "name": "charly",
+    "email": "martinezcarlosmanuel.1@gmail.com",
+    "phone": "1158235845",
+    "message": "vendan a mejor precio",
+    "date": "01-10-2024 - 11:10:22"
+  },
+  {
+    "name": "Charly",
+    "email": "martinezcarlosmanuel.1@gmail.com",
+    "phone": "1158235845",
+    "message": "hermano reparame la bombucha o te rompo la empresa esa.  como vas a cobrar 80 mil pesos .  me compro una bomba nueva afanada.",
+    "motivoConsulta": "Servicio Técnico",
+    "date": "02-10-2024 - 13:19:47"
+  },
+  {
+    "name": "Charly Prueba",
+    "email": "martinezcarlosmanuel.1@gmail.com",
+    "phone": "1158235845",
+    "message": "Mensaje de prueba de un hipotetico Sebastián .   Gracias Esteban .",
+    "motivoConsulta": "Trabajar con Nosotros",
+    "date": "02-10-2024 - 13:23:20"
+  },
+  {
+    "name": "Charly",
+    "email": "martinezcarlosmanuel.1@gmail.com",
+    "phone": "1158235845",
+    "message": "Hola como están.  la realidad es que siempre me consultan por bombas de su marca y yo siempre los recomiendo a ustedes.  pero me gustaría arreglar un porcentaje por cada recomendación, bajo amenaza de dejar de recomendarlos y recomendar a la competencia. Me dan de alta como cliente con un 30% de descuento y te vendo la bombuhca mas cometa. tinky winky",
+    "motivoConsulta": "Distribuidor",
+    "date": "02-10-2024 - 13:44:45"
+  },
+  {
+    "name": "Charly",
+    "email": "martinezcarlosmanuel.1@gmail.com",
+    "phone": "1158235845",
+    "message": "Como andas maquina!!!  mira compré un soplador por que tenía que limpiar el jardin de mi casa.  me recomendaron un back decker.   pero hablando con un amigo me dijo que ustedes venden sopladores .  por ahí podemos armar algo para soplar las hojas de mi casa y las tejas del vecino que te parece?.  abrazo Charly Way",
+    "motivoConsulta": "Consulta Técnica",
+    "date": "02-10-2024 - 14:05:59"
+  }
+]

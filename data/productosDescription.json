@@ -1,0 +1,280 @@
+[
+  {
+    "name": "DVR6",
+    "description": "Bomba de vacío Dosivac DVR6 New Gen de 2 etapas",
+    "path": "/models/DVR6.glb",
+    "caracteristicas": [
+      "Tipo de Producto: Bomba de vacío",
+      "Aplicación: Refrigeración",
+      "Rango de Caudal: 170 lts.",
+      "Etapas: 2 etapas",
+      "Motor: Tipo brusheless",
+      "Tipo de gases: R22 - R132 otros",
+      "Apto: gases de nueva generación 600 inflamables"
+    ],
+    "path-image": "/models/DVR6.png",
+    "rutas": {
+      "folleto": "https://www.dosivac.com/docs/folletos/Manual%20DVR%206.pdf",
+      "manual": "https://www.dosivac.com/docs/manuales/DVR%20BLUE/file-1650906879313.pdf"
+    }
+  },
+  {
+    "name": "soplador",
+    "description": "Soplador tipo ROOTS  DS-DSV",
+    "path": "/models/soplador.glb",
+    "caracteristicas": [
+      "Tipo de producto: soplador ",
+      "Aplicación: Tratamiento de aguas",
+      "Aplicación: Transporte Neumático",
+      "Caudal: 30 m3/h a 2800 m3/h",
+      "configurable: vacío - presión",
+      "Presión positiva: hasta 800 mbar",
+      "Presión negativa: hasta -500 mbar"
+    ],
+    "path-image": "/models/soplador.png"
+  },
+  {
+    "name": "Mi-Emd",
+    "description": "Bomba Dosificadora MI-EMD",
+    "path": "/models/Mi-Emd.png",
+    "caracteristicas": [
+      "Tipo de Producto: Dosificadora",
+      "Aplicación: Tratamiento de aguas",
+      "Aplicación: industria química en general",
+      "Tipo de accionamiento: Eléctrico",
+      "Rango de caudal:  0.01 lts/h   -  16 lts/h",
+      "Contrapresión Máxima: 10 kg/cm2",
+      "Otras Características:  reemplazo de bomba Milenio "
+    ],
+    "path-image": "/models/Mi-Emd.png"
+  },
+  {
+    "name": "EMD-PLUS",
+    "description": "Bomba Dosificadora EMD-PLUS",
+    "path": "/models/EMD-PLUS.png",
+    "caracteristicas": [
+      "Tipo de Producto: Dosificadora",
+      "Aplicación: Tratamiento de aguas",
+      "Aplicación: industria química en general",
+      "Tipo de accionamiento: Eléctrico",
+      "Otras Características:  capacidad seguidora 4-20 o Digital.",
+      "Rango de caudal:  0.01 lts/h   -  16 lts/h",
+      "Contrapresión Máxima: 10 kg/cm2"
+    ],
+    "path-image": "/models/EMD-PLUS.png",
+    "rutas": {
+      "manual": "https://www.dosivac.com/docs/manuales/EMD-PLUS/Manual%20EMD%20Plus%20-%20Junio17.pdf",
+      "folleto": "https://www.dosivac.com/docs/folletos/Vol.EMD_.PLUSE-I.pdf"
+    }
+  },
+  {
+    "name": "DEAP",
+    "description": "Bomba Dosificadora DEAP",
+    "path": "/models/DEAP.png",
+    "caracteristicas": [
+      "Tipo de Producto: Dosificadora",
+      "Tipo de accionamiento: Eléctrico",
+      "Aplicación: sistemas de alta presión",
+      "Tipo de industria: Petroleo"
+    ],
+    "path-image": "/models/DEAP.png"
+  },
+  {
+    "name": "DEN",
+    "description": "Bomba Dosificadora DEN",
+    "path": "/models/DEN.png",
+    "caracteristicas": [
+      "Tipo de Producto: Dosificadora",
+      "Aplicación: sistemas de alta presión",
+      "Tipo de industria: Petroleo",
+      "Tipo de accionamiento: Neumático"
+    ],
+    "path-image": "/models/DEN.png"
+  },
+  {
+    "name": "DECI",
+    "description": "Bomba Dosificadora DECI",
+    "path": "/models/DECI.png",
+    "caracteristicas": [
+      "Tipo de Producto: Dosificadora",
+      "Aplicación: sistemas de alta presión",
+      "Tipo de accionamiento: Eléctrico",
+      "Tipo de industria: Petroleo"
+    ],
+    "path-image": "/models/DECI.png"
+  },
+  {
+    "name": "EMD",
+    "description": "Bomba Dosificadora EMD",
+    "path": "/models/emd.png",
+    "caracteristicas": [
+      "Tipo de Producto: Dosificadora",
+      "Aplicación: Tratamiento de aguas",
+      "Aplicación: industria química en general",
+      "Tipo de accionamiento: Eléctrico",
+      "Rango de caudal:  0.01 lts/h   -  16 lts/h",
+      "Contrapresión Máxima: 10 kg/cm2"
+    ],
+    "path-image": "/models/EMD.png",
+    "rutas": {
+      "manual": "https://www.dosivac.com/docs/manuales/EMD/31001%20-%20Manual%20EMD.pdf",
+      "folleto": "https://www.dosivac.com/docs/folletos/Vol.EMDE-I-2019.pdf"
+    }
+  },
+  {
+    "name": "DVR2",
+    "description": "",
+    "path": "/models/DVR2.png",
+    "caracteristicas": [
+      "Tipo de Producto: Bomba de vacío",
+      "Aplicación: Refrigeración",
+      "Estapas: 2 etapas"
+    ],
+    "path-image": "/models/DVR2.png"
+  },
+  {
+    "name": "DSHC",
+    "description": "Bomba de Vacío DSHC ",
+    "path": "/models/DSHC.png",
+    "caracteristicas": [
+      "Tipo de Producto: Bomba de vacío",
+      "Aplicación: Vacío industrial"
+    ],
+    "path-image": "/models/DSHC.png"
+  },
+  {
+    "name": "DEPP",
+    "description": "Bomba dosificadora a planca DEPP",
+    "path": "/models/DEPP.png",
+    "caracteristicas": [
+      "Tipo de Producto: Dosificadora",
+      "Aplicación: sistemas de alta presión",
+      "Tipo de industria: Petroleo",
+      "Tipo de accionamiento: A Palanca",
+      "Rango de Caudal:"
+    ],
+    "path-image": "/models/DEPP.png"
+  },
+  {
+    "name": "DENG",
+    "description": "",
+    "path": "/models/DENG.png",
+    "caracteristicas": [
+      "Tipo de Producto: Dosificadora",
+      "Aplicación: sistemas de alta presión",
+      "Tipo de industria: "
+    ],
+    "path-image": "/models/DENG.png"
+  },
+  {
+    "name": "DEON",
+    "description": "",
+    "path": "/models/DEON.png",
+    "caracteristicas": [
+      "Tipo de Producto: Dosificadora"
+    ],
+    "path-image": "/models/DEON.png"
+  },
+  {
+    "name": "DAN",
+    "description": "",
+    "path": "/models/DAN.png",
+    "caracteristicas": [
+      "Tipo de Producto: Dosificadora"
+    ],
+    "path-image": "/models/DAN.png"
+  },
+  {
+    "name": "ddiblanco.JPG",
+    "description": "",
+    "path": "/models/ddiblanco.JPG",
+    "caracteristicas": []
+  },
+  {
+    "name": "Supervac",
+    "description": "Bomba de vacío Supervac",
+    "path": "/models/Supervac.png",
+    "caracteristicas": [
+      "Tipo de Producto: Bomba de vacío",
+      "Aplicación: Refrigeración",
+      "Etapas: 1 etapa"
+    ],
+    "path-image": "/models/Supervac.png"
+  },
+  {
+    "name": "periferica",
+    "description": "Bomba periferica marca Motorarg",
+    "path": "/models/periferica.jpg",
+    "caracteristicas": [
+      "Tipo de Producto: bomba de superficie tipo periférica",
+      "Aplicación: Elevadora/presurizadora",
+      "Potencia: 1/2 hp"
+    ],
+    "path-image": "/models/periferica.jpg"
+  },
+  {
+    "name": "recuperadora de gases",
+    "description": "Recuperadora de Gases ",
+    "path": "",
+    "path-image": "/models/recuperadora de gases.png",
+    "caracteristicas": [
+      "Tipo de Producto: Bomba de vacío",
+      "Aplicación: Refrigeración"
+    ]
+  },
+  {
+    "name": "solar",
+    "description": "",
+    "path": "",
+    "path-image": "/models/solar.png",
+    "caracteristicas": [
+      "Tipo de Producto: Dosificadora",
+      "Aplicación: sistemas de alta presión",
+      "Tipo de industria: Petroleo",
+      "Tipo de accionamiento: Eléctrico solar"
+    ]
+  },
+  {
+    "name": "EMDMAX",
+    "description": "Bomba dosificadora electromagnética de alto caudal",
+    "path": "/models/EMDMAX.png",
+    "caracteristicas": [
+      "Tipo de Producto: Dosificadora",
+      "Aplicación: Tratamiento de aguas",
+      "Aplicación: industria química en general",
+      "Tipo de accionamiento: Eléctrico"
+    ],
+    "path-image": "/models/EMDMAX.png"
+  },
+  {
+    "name": "DDI.JPG",
+    "description": "Bomba dosificadora Robusta para aplicación Industrial y Quimica General.",
+    "path": "/models/DDI.JPG",
+    "caracteristicas": [
+      "Tipo de Producto: Dosificadora",
+      "Aplicación: Tratamiento de aguas",
+      "Aplicación: industria química en general"
+    ]
+  },
+  {
+    "name": "6(1)",
+    "description": "",
+    "path": "/models/6(1).png",
+    "caracteristicas": [],
+    "path-image": "/models/6(1).png"
+  },
+  {
+    "name": "fondo agua1",
+    "description": "",
+    "path": "/models/fondo agua1.jpg",
+    "caracteristicas": [],
+    "path-image": "/models/fondo agua1.jpg"
+  },
+  {
+    "name": "tele",
+    "description": "",
+    "path": "/models/tele.jpg",
+    "caracteristicas": [],
+    "path-image": "/models/tele.jpg"
+  }
+]

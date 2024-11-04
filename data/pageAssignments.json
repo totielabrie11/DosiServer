@@ -1,0 +1,47 @@
+[
+  {
+    "photoName": "fondoPetroleo.png",
+    "pageName": "Petroleo",
+    "section": "Encabezado"
+  },
+  {
+    "photoName": "aplicandovacio.webp",
+    "pageName": "Refrigeracion",
+    "section": "Encabezado"
+  },
+  {
+    "photoName": "mantenimiento.webp",
+    "pageName": "Refrigeracion",
+    "section": "Mantenimiento Preventivo de Sistemas de Vacío"
+  },
+  {
+    "photoName": "aplicandovacio.webp",
+    "pageName": "Refrigeracion",
+    "section": "Aplicaciones en Refrigeración"
+  },
+  {
+    "photoName": "fondoagua.jpg",
+    "pageName": "Aguas",
+    "section": "Encabezado"
+  },
+  {
+    "photoName": "fondoagua2.jpg",
+    "pageName": "Aguas",
+    "section": "Bombas Dosivac: Innovación y Eficiencia en el Tratamiento de Agua"
+  },
+  {
+    "photoName": "mineria.webp",
+    "pageName": "Refineria",
+    "section": "Encabezado"
+  },
+  {
+    "photoName": "mineria.webp",
+    "pageName": "Refineria",
+    "section": "Encabezado"
+  },
+  {
+    "photoName": "mineria.webp",
+    "pageName": "Refineria",
+    "section": "Encabezado"
+  }
+]

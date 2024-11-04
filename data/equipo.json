@@ -1,0 +1,65 @@
+[
+  {
+    "id": 1,
+    "nombre": "Rodrigo H. Prola",
+    "rol": "Director Comercial Dosivac",
+    "image": "/assets/img/team/1727358406019.png",
+    "email": "rh@dosivac.com",
+    "telefono": "",
+    "linkedin": "https://www.linkedin.com/in/rodrigo-prola-6328915a/?originalSubdomain=ar"
+  },
+  {
+    "id": 2,
+    "nombre": "Damián G. Prola",
+    "rol": "Director Productivo",
+    "image": "/assets/img/team/1729593332969.png",
+    "email": "brasbom@dosivac.com",
+    "telefono": "1132694248",
+    "linkedin": "https://www.linkedin.com/in/damian-gast%C3%B3n-prola-62bab491/?originalSubdomain=ar"
+  },
+  {
+    "id": 4,
+    "nombre": "Laura De Luca",
+    "rol": "Directora Financiera ",
+    "email": "",
+    "telefono": "",
+    "linkedin": "https://ar.linkedin.com/in/laura-de-luca-8a589b8b",
+    "image": "/assets/img/team/1729617732643.jpg"
+  },
+  {
+    "id": 5,
+    "nombre": "Carlos Risueño",
+    "rol": "Gerente Comercial",
+    "email": "comercial@dosivac.com",
+    "telefono": "1162004680",
+    "linkedin": "https://ar.linkedin.com/in/carlos-risue%C3%B1o-6013922a",
+    "image": "/assets/img/team/1727359607264.png"
+  },
+  {
+    "id": 6,
+    "nombre": "Fernando NoloPedrat",
+    "rol": "Gerente de Planificación",
+    "email": "fernandonp@dosivac.com",
+    "telefono": "1166589519",
+    "linkedin": "https://www.linkedin.com/in/fernando-nolo-pedrat-2a10a24a/",
+    "image": "/assets/img/team/1729594909926.png"
+  },
+  {
+    "id": 7,
+    "nombre": "Francisco Quaranta",
+    "rol": "Gerente Financiero",
+    "email": "contable@dosivac.com",
+    "telefono": "",
+    "linkedin": "https://www.linkedin.com/in/francisco-javier-quaranta-a40ba7a/?originalSubdomain=ar",
+    "image": "/uploads/fotos/IMG_20241017_150101259.jpg"
+  },
+  {
+    "id": 8,
+    "nombre": "Pablo Volk",
+    "rol": "Gerente de Proyectos - Ingenieria",
+    "email": "pvolk@dosivac.com",
+    "telefono": "",
+    "linkedin": "https://www.linkedin.com/in/pablo-volk-693360190/?originalSubdomain=ar",
+    "image": "/assets/img/team/1729594556212.jpg"
+  }
+]
