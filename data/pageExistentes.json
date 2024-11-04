@@ -1,0 +1,25 @@
+{
+    "paginas_detectadas": [
+      {
+        "id": 1,
+        "nombre": "Aguas"
+      },
+      {
+        "id": 2,
+        "nombre": "Encabezado"
+      },
+      {
+        "id": 3,
+        "nombre": "Petroleo"
+      },
+      {
+        "id": 4,
+        "nombre": "Refineria"
+      },
+      {
+        "id": 5,
+        "nombre": "Refrigeracion"
+      }
+    ]
+  }
+  

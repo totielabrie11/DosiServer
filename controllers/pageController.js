@@ -1,29 +1,33 @@
 const express = require('express');
 const fs = require('fs');
 const path = require('path');
+
 const router = express.Router();
 
 const ASSIGNMENTS_FILE = path.join(__dirname, '..', 'data', 'pageAssignments.json');
+const PAGES_FILE = path.join(__dirname, '..', 'data', 'pageExistentes.json');
 
 // Verificar si el archivo `pageAssignments.json` existe, si no, crearlo con un contenido vacío
 if (!fs.existsSync(ASSIGNMENTS_FILE)) {
-  fs.writeFileSync(ASSIGNMENTS_FILE, JSON.stringify([]));
+  fs.writeFileSync(ASSIGNMENTS_FILE, JSON.stringify({}));
+}
+
+// Función para leer las páginas existentes desde el archivo JSON
+function getExistingPages() {
+  const data = fs.readFileSync(PAGES_FILE, 'utf8');
+  const { paginas_detectadas } = JSON.parse(data);
+  return paginas_detectadas.map(page => page.nombre);
 }
 
 // Endpoint para obtener las páginas existentes
 router.get('/api/pages', (req, res) => {
-  fs.readdir(PAGES_DIR, (err, files) => {
-    if (err) {
-      console.error('Error al leer las páginas en la ruta:', PAGES_DIR, err);
-      return res.status(500).json({ message: 'Error al leer las páginas.' });
-    }
-
-    const pages = files
-      .filter(file => file.endsWith('.jsx'))
-      .map(file => file.replace('.jsx', ''));  // Remueve la extensión .jsx
-
+  try {
+    const pages = getExistingPages();
     res.json({ pages });
-  });
+  } catch (error) {
+    console.error('Error al leer las páginas existentes:', error);
+    res.status(500).json({ message: 'Error al leer las páginas existentes.' });
+  }
 });
 
 // Endpoint para asignar un fondo de pantalla a una página
@@ -34,17 +38,14 @@ router.post('/api/pages/assign', (req, res) => {
     return res.status(400).json({ message: 'Faltan parámetros.' });
   }
 
-  // Leer el archivo de asignaciones
   fs.readFile(ASSIGNMENTS_FILE, 'utf8', (err, data) => {
     let assignments = {};
     if (!err && data) {
-      assignments = JSON.parse(data);  // Parsear el archivo existente si existe
+      assignments = JSON.parse(data);
     }
 
-    // Asignar el fondo de pantalla a la página
     assignments[pageName] = photoName;
 
-    // Guardar la nueva asignación
     fs.writeFile(ASSIGNMENTS_FILE, JSON.stringify(assignments, null, 2), (err) => {
       if (err) {
         return res.status(500).json({ message: 'Error al guardar la asignación.' });
@@ -85,7 +86,6 @@ router.get('/api/background/:page', (req, res) => {
 
     const pageAssignments = JSON.parse(data);
 
-    // Obtener el fondo correspondiente a la página
     const background = pageAssignments[page];
 
     if (background) {
