@@ -2,7 +2,7 @@
   {
     "name": "DVR6",
     "description": "Bomba de vacío Dosivac DVR6 New Gen de 2 etapas",
-    "path": "/models/DVR6.glb",
+    "path": "/models/DVR6.png",
     "caracteristicas": [
       "Tipo de Producto: Bomba de vacío",
       "Aplicación: Refrigeración",
@@ -254,6 +254,14 @@
       "Tipo de Producto: Dosificadora",
       "Aplicación: Tratamiento de aguas",
       "Aplicación: industria química en general"
-    ]
+    ],
+    "path-image": "/models/DDI.JPG"
+  },
+  {
+    "name": "bombasumergible",
+    "description": "",
+    "path": "/models/bombasumergible.jpg",
+    "caracteristicas": [],
+    "path-image": "/models/bombasumergible.jpg"
   }
 ]
