@@ -256,12 +256,5 @@
       "Aplicación: industria química en general"
     ],
     "path-image": "/models/DDI.JPG"
-  },
-  {
-    "name": "bombasumergible",
-    "description": "",
-    "path": "/models/bombasumergible.jpg",
-    "caracteristicas": [],
-    "path-image": "/models/bombasumergible.jpg"
   }
 ]

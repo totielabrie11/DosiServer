@@ -17,6 +17,7 @@ const downloadDbController = require('./controllers/downloadDbController');
 const equipoController = require('./controllers/equipoController');
 const novedadesController = require('./controllers/novedadesController');
 const equiposController = require('./controllers/equiposController');
+const cleanOrphanedFiles = require('./scripts/cleanOrphanedFiles');
 
 const app = express();
 // Configuración genérica de CORS
@@ -45,6 +46,8 @@ app.use(session({
   cookie: { maxAge: 60 * 60 * 1000 } // 1 hora de duración de la sesión
 }));
 
+cleanOrphanedFiles(); // Ejecución inicial
+setInterval(cleanOrphanedFiles, 60 * 60 * 1000); 
 
 // Ruta absoluta al directorio de almacenamiento
 const publicDir = path.join(__dirname, 'public');
@@ -434,52 +437,6 @@ app.delete('/api/product-descriptions', (req, res) => {
 });
 
 
-// Endpoint para eliminar un archivo
-router.delete('/api/delete-file', (req, res) => {
-  const { name } = req.body;
-
-  if (!name) {
-    return res.status(400).json({ success: false, message: 'Falta el nombre del archivo.' });
-  }
-
-  const normalizedInputName = name.trim().toLowerCase();
-
-  try {
-    const files = fs.readdirSync(modelsDir);
-    console.log('Archivos disponibles en el directorio:', files);
-
-    const matchingFiles = files.filter(
-      (file) => path.parse(file).name.toLowerCase() === normalizedInputName
-    );
-    console.log('Archivos encontrados para eliminar:', matchingFiles);
-
-    if (matchingFiles.length === 0) {
-      return res.status(404).json({ success: false, message: 'Archivo no encontrado.' });
-    }
-
-    matchingFiles.forEach((file) => {
-      const filePath = path.join(modelsDir, file);
-      fs.unlink(filePath, (err) => {
-        if (err) {
-          console.error(`Error al eliminar el archivo ${filePath}:`, err);
-        } else {
-          console.log(`Archivo ${filePath} eliminado exitosamente.`);
-        }
-      });
-    });
-
-    res.json({
-      success: true,
-      message: `Archivo(s) asociado(s) con "${name}" eliminado(s) exitosamente.`,
-      deletedFiles: matchingFiles,
-    });
-  } catch (error) {
-    console.error('Error al eliminar archivo(s):', error);
-    res.status(500).json({ success: false, message: 'Error interno del servidor.' });
-  }
-});
-
-
 // Actualizar detalles del producto (manual, folleto)
 app.post('/api/product-details', (req, res) => {
   const { name, manual, folleto } = req.body;
@@ -517,46 +474,6 @@ app.post('/api/product-characteristics', (req, res) => {
 
   saveFileToPath(productosDescriptionPath, descriptions);
   res.json({ success: true });
-});
-
-
-
-// Eliminar una descripción de producto, la imagen asociada y su orden
-app.delete('/api/product', (req, res) => {
-  const { name } = req.body;
-
-  // Leer las descripciones de productos
-  let descriptions = readFileFromPath(productosDescriptionPath);
-
-  // Buscar el producto a eliminar
-  const productToDelete = descriptions.find(product => product.name === name);
-  if (!productToDelete) {
-    return res.status(404).json({ success: false, message: 'Producto no encontrado.' });
-  }
-
-  // Eliminar el producto del archivo de descripciones
-  descriptions = descriptions.filter(product => product.name !== name);
-  saveFileToPath(productosDescriptionPath, descriptions);
-
-  // Eliminar la imagen asociada al producto
-  const imagePath = path.join(__dirname, '../public', productToDelete['path-image']);
-
-  fs.unlink(imagePath, (err) => {
-    if (err) {
-      console.error('Error al eliminar la imagen:', err);
-      return res.status(500).json({ success: false, message: 'No se pudo eliminar la imagen.' });
-    }
-
-    // Leer el archivo de orden de productos
-    let order = readFileFromPath(productOrderPath);
-
-    // Eliminar el nombre del producto del orden
-    order = order.filter(productName => productName !== name);
-    saveFileToPath(productOrderPath, order);
-
-    // Responder con éxito
-    res.json({ success: true });
-  });
 });
 
 
