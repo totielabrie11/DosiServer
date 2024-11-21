@@ -436,6 +436,18 @@ app.delete('/api/product-descriptions', (req, res) => {
   });
 });
 
+// Endpoint para ejecutar la limpieza de archivos huérfanos
+app.post('/api/clean-files', async (req, res) => {
+  try {
+    console.log('Ejecutando limpieza de archivos huérfanos...');
+    await cleanOrphanedFiles();
+    console.log('Limpieza completada correctamente.');
+    res.status(200).json({ message: 'Limpieza completada exitosamente.' });
+  } catch (error) {
+    console.error('Error durante la limpieza de archivos huérfanos:', error.message);
+    res.status(500).json({ message: 'Error durante la limpieza de archivos.' });
+  }
+});
 
 // Actualizar detalles del producto (manual, folleto)
 app.post('/api/product-details', (req, res) => {

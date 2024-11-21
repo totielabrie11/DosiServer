@@ -70,5 +70,17 @@
     ],
     "isAnimating": false,
     "rotationSpeed": 0.01
+  },
+  {
+    "name": "Laura",
+    "lightIntensity": 1,
+    "spotLightIntensity": 1,
+    "lightPosition": [
+      10,
+      10,
+      10
+    ],
+    "isAnimating": false,
+    "rotationSpeed": 0.01
   }
 ]
