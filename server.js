@@ -16,12 +16,15 @@ const buscadorSeccionPages = require('./controllers/buscadorSeccionPages');
 const downloadDbController = require('./controllers/downloadDbController');
 const equipoController = require('./controllers/equipoController');
 const novedadesController = require('./controllers/novedadesController');
+const equiposController = require('./controllers/equiposController');
 
 const app = express();
 // Configuración genérica de CORS
 app.use(cors());
 app.use(express.static('public'));
 app.use('/uploads', express.static('uploads'));
+
+const router = express.Router();
 
 const port = process.env.PORT || 5000;
 
@@ -41,6 +44,20 @@ app.use(session({
   saveUninitialized: true,
   cookie: { maxAge: 60 * 60 * 1000 } // 1 hora de duración de la sesión
 }));
+
+
+// Ruta absoluta al directorio de almacenamiento
+const publicDir = path.join(__dirname, 'public');
+const modelsDir = path.join(publicDir, 'models');
+console.log("🚀 ~ modelsDir:", modelsDir)
+
+// Asegúrate de que el directorio "models" exista
+if (!fs.existsSync(modelsDir)) {
+  fs.mkdirSync(modelsDir, { recursive: true });
+}
+
+// Usar el controlador de equipos
+app.use(equiposController);
 
 app.use(novedadesController);
 
@@ -143,6 +160,19 @@ if (!fs.existsSync(distribuidoresPath)) {
   fs.writeFileSync(distribuidoresPath, JSON.stringify([]));
 }
 
+// Archivo distribuidores.json
+const equiposPath = path.join(dataDir, 'equiposConfigurables.json');
+if (!fs.existsSync(equiposPath)) {
+  fs.writeFileSync(equiposPath, JSON.stringify([]));
+}
+
+// Archivo distribuidores.json
+const bombasPath = path.join(dataDir, 'equiposConfigurablesBomba.json');
+if (!fs.existsSync(bombasPath)) {
+  fs.writeFileSync(bombasPath, JSON.stringify([]));
+}
+
+
 // Funciones auxiliares para leer y escribir archivos JSON
 
 // Leer archivo JSON desde una ruta
@@ -167,19 +197,17 @@ app.use('/uploads', express.static(path.join(__dirname, '../uploads')));
 app.use('/uploads/videos', express.static(path.join(__dirname, '../uploads/videos')));
 
 
-// Configuración de Multer para subir productos 3D (Modelos)
+// Configuración de Multer
 const storageModels = multer.diskStorage({
   destination: (req, file, cb) => {
-    cb(null, path.join(__dirname, '../public', 'models')); 
-    // Directorio de destino para modelos
+    cb(null, modelsDir); // Guardar en "public/models"
   },
   filename: (req, file, cb) => {
-    cb(null, file.originalname);  // Mantener el nombre original
-  }
+    cb(null, file.originalname); // Usar el nombre original del archivo
+  },
 });
 
-const uploadModels = multer({ storage: storageModels }); // Multer para productos 3D
-
+const uploadModels = multer({ storage: storageModels });
 
 // Endpoint para manejo de login
 app.post('/api/login', (req, res) => {
@@ -195,7 +223,7 @@ app.post('/api/login', (req, res) => {
 });
 
 // Endpoint para subir productos 3D o imágenes
-app.post('/api/upload', uploadModels.single('file'), (req, res) => {  // Cambiado "upload" por "uploadModels"
+app.post('/api/upload', uploadModels.single('file'), (req, res) => {
   if (!req.file) {
     return res.status(400).json({ message: 'No se ha podido subir el producto' });
   }
@@ -207,20 +235,32 @@ app.post('/api/upload', uploadModels.single('file'), (req, res) => {  // Cambiad
     return res.status(400).json({ message: 'Tipo de archivo no soportado' });
   }
 
+  // Construir el nombre del producto y la ruta dentro de "public/models"
   const modelName = req.body.name || path.basename(req.file.originalname, fileExtension);
-  const modelPath = `/models/${req.file.originalname}`;
+  const modelPath = `/models/${req.file.originalname}`; // Ruta relativa desde "public"
 
+  // Leer y actualizar "productosDescription.json"
   const descriptions = readFileFromPath(productosDescriptionPath);
-  const existingProduct = descriptions.find(product => product.name.toLowerCase() === modelName.toLowerCase());
+  const existingProduct = descriptions.find(
+    (product) => product.name.toLowerCase() === modelName.toLowerCase()
+  );
 
   if (existingProduct) {
+    // Actualizar el producto existente
     if (fileExtension === '.jpg' || fileExtension === '.png') {
       existingProduct['path-image'] = modelPath;
     } else {
       existingProduct.path = modelPath;
     }
   } else {
-    const newProduct = { name: modelName, description: '', path: '', 'path-image': '', caracteristicas: [] };
+    // Crear un nuevo producto
+    const newProduct = {
+      name: modelName,
+      description: '',
+      path: '',
+      'path-image': '',
+      caracteristicas: [],
+    };
     if (fileExtension === '.jpg' || fileExtension === '.png') {
       newProduct['path-image'] = modelPath;
     } else {
@@ -231,6 +271,7 @@ app.post('/api/upload', uploadModels.single('file'), (req, res) => {  // Cambiad
 
   saveFileToPath(productosDescriptionPath, descriptions);
 
+  // Actualizar el archivo "productOrder.json"
   const order = readFileFromPath(productOrderPath);
   if (!order.includes(modelName.toLowerCase())) {
     order.push(modelName.toLowerCase());
@@ -309,6 +350,41 @@ app.post('/api/product-order', (req, res) => {
   res.json({ success: true });
 });
 
+// Ruta para eliminar un producto del orden
+app.delete('/api/product-order', (req, res) => {
+  const { name } = req.body;
+
+  // Validar que se envíe el nombre del producto
+  if (!name) {
+    return res.status(400).json({ success: false, message: 'Falta el nombre del producto.' });
+  }
+
+  try {
+    // Leer el archivo de orden de productos
+    let order = JSON.parse(fs.readFileSync(productOrderPath, 'utf-8'));
+
+    // Filtrar para eliminar el nombre del producto
+    const filteredOrder = order.filter((productName) => productName !== name);
+
+    // Si no cambia la longitud, el producto no estaba en la lista
+    if (filteredOrder.length === order.length) {
+      return res.status(404).json({ success: false, message: 'Producto no encontrado en el orden.' });
+    }
+
+    // Guardar el nuevo orden en el archivo JSON
+    fs.writeFileSync(productOrderPath, JSON.stringify(filteredOrder, null, 2), 'utf-8');
+
+    res.json({
+      success: true,
+      message: `Producto "${name}" eliminado del orden exitosamente.`,
+    });
+  } catch (error) {
+    console.error('Error al eliminar del orden:', error);
+    res.status(500).json({ success: false, message: 'Error interno del servidor.' });
+  }
+});
+
+
 // Actualizar descripciones de productos
 app.post('/api/product-descriptions', (req, res) => {
   const { name, description } = req.body;
@@ -324,6 +400,85 @@ app.post('/api/product-descriptions', (req, res) => {
   saveFileToPath(productosDescriptionPath, descriptions);
   res.json({ success: true });
 });
+
+// Eliminar un producto
+app.delete('/api/product-descriptions', (req, res) => {
+  const { name } = req.body;
+
+  // Validar que el nombre del producto esté presente en la solicitud
+  if (!name) {
+    return res.status(400).json({ success: false, message: 'Falta el nombre del producto.' });
+  }
+
+  // Leer el archivo de descripciones de productos
+  let descriptions = readFileFromPath(productosDescriptionPath);
+
+  // Buscar el índice del producto a eliminar
+  const productIndex = descriptions.findIndex(product => product.name === name);
+
+  if (productIndex === -1) {
+    return res.status(404).json({ success: false, message: 'Producto no encontrado.' });
+  }
+
+  // Eliminar el producto del array
+  const [deletedProduct] = descriptions.splice(productIndex, 1);
+
+  // Guardar los cambios en el archivo JSON
+  saveFileToPath(productosDescriptionPath, descriptions);
+
+  res.json({
+    success: true,
+    message: `Producto "${name}" eliminado exitosamente.`,
+    deletedProduct, // Se devuelve el producto eliminado para confirmación (opcional)
+  });
+});
+
+
+// Endpoint para eliminar un archivo
+router.delete('/api/delete-file', (req, res) => {
+  const { name } = req.body;
+
+  if (!name) {
+    return res.status(400).json({ success: false, message: 'Falta el nombre del archivo.' });
+  }
+
+  const normalizedInputName = name.trim().toLowerCase();
+
+  try {
+    const files = fs.readdirSync(modelsDir);
+    console.log('Archivos disponibles en el directorio:', files);
+
+    const matchingFiles = files.filter(
+      (file) => path.parse(file).name.toLowerCase() === normalizedInputName
+    );
+    console.log('Archivos encontrados para eliminar:', matchingFiles);
+
+    if (matchingFiles.length === 0) {
+      return res.status(404).json({ success: false, message: 'Archivo no encontrado.' });
+    }
+
+    matchingFiles.forEach((file) => {
+      const filePath = path.join(modelsDir, file);
+      fs.unlink(filePath, (err) => {
+        if (err) {
+          console.error(`Error al eliminar el archivo ${filePath}:`, err);
+        } else {
+          console.log(`Archivo ${filePath} eliminado exitosamente.`);
+        }
+      });
+    });
+
+    res.json({
+      success: true,
+      message: `Archivo(s) asociado(s) con "${name}" eliminado(s) exitosamente.`,
+      deletedFiles: matchingFiles,
+    });
+  } catch (error) {
+    console.error('Error al eliminar archivo(s):', error);
+    res.status(500).json({ success: false, message: 'Error interno del servidor.' });
+  }
+});
+
 
 // Actualizar detalles del producto (manual, folleto)
 app.post('/api/product-details', (req, res) => {

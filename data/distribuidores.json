@@ -428,5 +428,18 @@
       -32.211540459183674,
       -61.70453188367347
     ]
+  },
+  {
+    "id": 34,
+    "nombre": "BESTOOLS REFRIGERACION",
+    "direccion": "Av. Pres. Arturo Illia 1901",
+    "provincia": "Buenos Aires - Villa Maipú",
+    "telefono": "0111538454851",
+    "mail": "refbestools@gmail.com",
+    "tipo": "refrigeracion",
+    "posicion": [
+      -34.5692765,
+      -58.5203482
+    ]
   }
 ]

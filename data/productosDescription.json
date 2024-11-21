@@ -255,26 +255,5 @@
       "Aplicación: Tratamiento de aguas",
       "Aplicación: industria química en general"
     ]
-  },
-  {
-    "name": "6(1)",
-    "description": "",
-    "path": "/models/6(1).png",
-    "caracteristicas": [],
-    "path-image": "/models/6(1).png"
-  },
-  {
-    "name": "fondo agua1",
-    "description": "",
-    "path": "/models/fondo agua1.jpg",
-    "caracteristicas": [],
-    "path-image": "/models/fondo agua1.jpg"
-  },
-  {
-    "name": "tele",
-    "description": "",
-    "path": "/models/tele.jpg",
-    "caracteristicas": [],
-    "path-image": "/models/tele.jpg"
   }
 ]

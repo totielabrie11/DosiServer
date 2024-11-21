@@ -1,0 +1,46 @@
+
+  [
+    {
+      "id": "1",
+      "nombre": "Bomba DDI",
+      "tipo": "Electromecánica",
+      "presion_maxima": "10 bar",
+      "caudal_maximo": "450 l/h",
+      "imagenbomba": "img/bombas/DDI.JPG"
+    },
+    {
+      "id": "2",
+      "nombre": "Bomba DEAP",
+      "tipo": "Electromecánica",
+      "presion_maxima": "200 bar",
+      "caudal_maximo": "120 l/h",
+      "imagenbomba": "img/bombas/DEAP.png"
+    },
+    {
+      "id": "3",
+      "nombre": "Bomba DECI",
+      "tipo": "Electromecánica",
+      "presion_maxima": "150 bar",
+      "caudal_maximo": "80 l/h",
+      "imagenbomba": "img/bombas/DECI.png"
+    },
+    {
+      "id": "4",
+      "nombre": "Bomba DEN",
+      "tipo": "Neumática",
+      "presion_maxima": "300 bar",
+      "caudal_maximo": "250 l/h",
+      "imagenbomba": "img/bombas/DEN.png"
+    },
+    {
+      "id": "5",
+      "nombre": "Bomba DENG",
+      "tipo": "Neumática",
+      "presion_maxima": "350 bar",
+      "caudal_maximo": "300 l/h",
+      "imagenbomba": "img/bombas/DENG.png"
+    }
+  ]
+  
+ 
+  

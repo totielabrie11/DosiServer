@@ -1,0 +1,75 @@
+[
+    {
+      "id": "1",
+      "nombre": "Sistema 1000 Litros Completo",
+      "capacidad": "1000L",
+      "probaeta": "si",
+      "tablero": "si",
+      "imagen": "assets/img/equipos/1000completo.png"
+    },
+    {
+      "id": "2",
+      "nombre": "Antibandalismo",
+      "capacidad": "N/A",
+      "probaeta": "no",
+      "tablero": "no",
+      "imagen": "assets/img/equipos/antibandalismo.png"
+    },
+    {
+      "id": "3",
+      "nombre": "Bastidor",
+      "capacidad": "N/A",
+      "probaeta": "si",
+      "tablero": "no",
+      "imagen": "assets/img/equipos/bastidor.png"
+    },
+    {
+      "id": "4",
+      "nombre": "Bastidor con Bandeja y Piping",
+      "capacidad": "N/A",
+      "probaeta": "no",
+      "tablero": "si",
+      "imagen": "assets/img/equipos/bastidorbandejapiping.png"
+    },
+    {
+      "id": "5",
+      "nombre": "Bastidor con Bandeja",
+      "capacidad": "N/A",
+      "probaeta": "si",
+      "tablero": "si",
+      "imagen": "assets/img/equipos/bastidorconbandeja.png"
+    },
+    {
+      "id": "6",
+      "nombre": "Con Bomba",
+      "capacidad": "200L",
+      "probaeta": "no",
+      "tablero": "no  ",
+      "imagen": "assets/img/equipos/conbomb.png"
+    },
+    {
+      "id": "7",
+      "nombre": "Con Calibrador",
+      "capacidad": "400L",
+      "probaeta": "si",
+      "tablero": "no",
+      "imagen": "assets/img/equipos/concalibrador.png"
+    },
+    {
+      "id": "8",
+      "nombre": "Con Tablero",
+      "capacidad": "1000L",
+      "probaeta": "si",
+      "tablero": "si",
+      "imagen": "assets/img/equipos/contablero.png"
+    },
+    {
+      "id": "9",
+      "nombre": "Soporte para Tablero",
+      "capacidad": "N/A",
+      "probaeta": "no",
+      "tablero": "no",
+      "imagen": "assets/img/equipos/soportetablero.png"
+    }
+  ]
+  
